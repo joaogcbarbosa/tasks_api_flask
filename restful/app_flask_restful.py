@@ -26,13 +26,13 @@ tasks = [
 @app.route('/')
 def home():
     return ('<h1>Página Inicial</h1>'
-            '<h2><a href="http://127.0.0.1:5000/todas-tarefas/">Todas Tarefas</a><br></h2>'
-            '<h3>Para pesquisar(GET) ou excluir(DELETE) tarefa por ID: http://127.0.0.1:5000/tarefa/"id"/</h3>'
-            '<h3>Para inserir(POST) tarefa: http://127.0.0.1:5000/incluir-tarefa/</h3>'
-            '<h3>Para alterar(PUT) somente o status: http://127.0.0.1:5000/alterar-status/"id"/</h3>')
+            '<h2><a href="http://127.0.0.1:5000/tarefas/">Todas Tarefas</a><br></h2>'
+            '<h3>Para pesquisar(GET), alterar status(PUT) ou excluir(DELETE) tarefa por ID: '
+            'http://127.0.0.1:5000/tarefa/"id"/</h3>'
+            '<h3>Para inserir(POST) tarefa: http://127.0.0.1:5000/tarefa/</h3>')
 
 
-class TodasTarefas(Resource):
+class Tarefas(Resource):
     def get(self):
         return tasks
 
@@ -51,13 +51,6 @@ class Tarefa(Resource):
                      'mensagem': mensagem}
         return dados
 
-    def delete(self, id):
-        tasks.pop(id)
-        return {'status': 'Sucesso!',
-                'mensagem': 'Registro excluído.'}
-
-
-class IncluirTarefa(Resource):
     def post(self):
         dados = loads(request.data)
         dados['id'] = len(tasks)
@@ -65,19 +58,20 @@ class IncluirTarefa(Resource):
         return {'status': 'Sucesso!',
                 'mensagem': 'Registro inserido.'}
 
-
-class AlterarStatus(Resource):
     def put(self, id):
         dados = loads(request.data)
         tasks[id]['status'] = dados['status']
         return {'status': 'Sucesso!',
                 'mensagem': 'Status alterado.'}
 
+    def delete(self, id):
+        tasks.pop(id)
+        return {'status': 'Sucesso!',
+                'mensagem': 'Registro excluído.'}
 
-api.add_resource(TodasTarefas, '/todas-tarefas/')
-api.add_resource(Tarefa, '/tarefa/<int:id>/')
-api.add_resource(IncluirTarefa, '/incluir-tarefa/')
-api.add_resource(AlterarStatus, '/alterar-status/<int:id>/')
+
+api.add_resource(Tarefas, '/tarefas/')
+api.add_resource(Tarefa, '/tarefa/<int:id>/', '/tarefa/')
 
 if __name__ == '__main__':
     app.run()
