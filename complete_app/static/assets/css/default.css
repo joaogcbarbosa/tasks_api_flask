@@ -1,0 +1,40 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body{
+    font-size: 100%;
+    list-style-type: none;
+    background: 
+        linear-gradient(#5bc0ff, #9198e5)
+        no-repeat
+        fixed
+        padding-box
+        content-box
+        ;
+}
+
+.button {
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+}
+
+.button a {
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid #5bc0ff;
+    color: #5bc0ff;
+    box-shadow: 5px 5px 5px #707070;
+}

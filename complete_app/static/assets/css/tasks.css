@@ -1,0 +1,19 @@
+@import url(/static/assets/css/default.css);
+
+.tasks {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 50px;
+    gap: 30px;
+}
+
+ul {
+    list-style-type: none;
+    text-transform: capitalize;
+    background-color: aliceblue;
+    border: 1px solid #e2e2e2;
+    padding: 15px;
+    box-shadow: 5px 5px 5px rgb(70, 70, 70);
+    width: 370px;
+}

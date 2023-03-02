@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/assets/css/tasks.css" />
+    <title>Tarefas</title>
+  </head>
+  <body>
+
+    <section class="tasks">
+      {% for task in tasks %}
+      <ul>
+        <li>Id Tarefa: {{ task.id_tarefa }}</li>
+        <li>Responsável: {{ task.pessoa.nome_pessoa }}</li>
+        <li>Tarefa: {{ task.nome_tarefa }}</li>
+        <li>Status: {{ task.status }}</li>
+      </ul>
+      {% endfor %}
+    </section>
+
+    <section class="button">
+      <a href="http://192.168.0.10:5000">Voltar</a>
+    </section>
+
+  </body>
+</html>

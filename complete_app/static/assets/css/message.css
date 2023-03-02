@@ -1,0 +1,14 @@
+@import url(/static/assets/css/default.css);
+
+h1 {
+    background-color: aliceblue;
+    border: 2px solid #e2e2e2;
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px #707070;
+    width: 420px;
+    font-style: oblique;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    margin-top: 20px;
+}

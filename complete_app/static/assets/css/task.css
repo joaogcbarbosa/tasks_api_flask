@@ -1,0 +1,17 @@
+@import url(/static/assets/css/default.css);
+
+.task {
+    padding: 20px;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+ul {
+    background-color: aliceblue;
+    width: 370px;
+    border: 1px solid #e2e2e2;
+    box-shadow: 5px 5px 5px rgb(70, 70, 70);
+    padding: 15px;
+    list-style: none;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/assets/css/post-task.css" />
+    <title>Tarefa</title>
+  </head>
+  <body>
+    <h1>Incluir Tarefa</h1>
+
+    <form method="post" onsubmit="alertMessagePost()">
+      <label>Responsável: </label>
+      <input type="text" name="name" />
+
+      <label>Tarefa: </label>
+      <input type="text" name="task" />
+
+      <label>Status: </label>
+      <select name="status">
+        <option>Em andamento</option>
+        <option>Pausado</option>
+        <option>Finalizado</option>
+      </select>
+
+      <input type="submit" value="Enviar" />
+      <input type="reset" value="Limpar" />
+    </form>
+
+    <section class="button">
+      <a href="http://192.168.0.10:5000">Voltar</a>
+    </section>
+
+    <script src="/static/assets/js/alert-messages.js"></script>
+  </body>
+</html>

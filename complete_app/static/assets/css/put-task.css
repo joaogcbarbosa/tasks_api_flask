@@ -1,0 +1,22 @@
+@import url(/static/assets/css/default.css);
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: aliceblue;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 188px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid #e2e2e2;
+    box-shadow: 5px 5px 5px #707070;
+    gap: 5px;
+}
